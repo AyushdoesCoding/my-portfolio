@@ -23,13 +23,18 @@ return (
         </a>
         </li>
         <li>
-        <a href="mailto:Ayushnegi2k05@gmail.com" className="link-as-button" target="_blank" rel="noopener noreferrer">Email Me
+<a 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=Ayushnegi2k05@gmail.com" 
+            className="link-as-button" 
+            target="_blank" 
+            rel="noopener noreferrer">Email me
             </a>
         </li>
     </ul>
-</div>
+    </div>
 );
 }
 
 export default Links;
+
 
