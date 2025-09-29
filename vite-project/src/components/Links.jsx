@@ -23,8 +23,8 @@ return (
         </a>
         </li>
         <li>
-        <a> href="mailto:Ayushnegi2k05@gmail.com" className="link-as-button"
-            Email me</a>
+        <a href="mailto:Ayushnegi2k05@gmail.com" className="link-as-button" target="_blank" rel="noopener noreferrer">Email Me
+            </a>
         </li>
     </ul>
 </div>
