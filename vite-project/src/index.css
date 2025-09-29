@@ -1,9 +1,6 @@
-/* This is a CSS file. It controls the look and feel of your website.
-  We will add some simple, modern styles here.
-*/
-
-/* Define some colors as variables so we can reuse them easily. */
+/* --- GLOBAL STYLES & COLOR PALETTE --- */
 :root {
+  /* Neon Sunset Theme */
   --background-color: #1A102C;
   --card-background: #2A1A45;
   --text-color: #F5E6FF; /* Light Lavender */
@@ -11,114 +8,118 @@
   --border-color: #4B2A63;
 }
 
-/* A basic "reset" to make sure our site looks the same on all browsers. */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- BASIC PAGE SETUP --- */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.7;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-/* This is the main container for our whole app. */
+/* --- MAIN APP CONTAINER --- */
 .app {
-  max-width: 900px; /* Stop the site from getting too wide on big screens. */
-  margin: 50px auto; /* Center the whole thing on the page. */
-  padding: 0 25px; /* Add some space on the sides for small screens. */
+  width: 100%;
+  max-width: 680px; /* Optimal width for a single column layout */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Creates the space between the main sections */
 }
 
-/* This is the base style for our card sections. */
-.card, .header-card, .footer-card {
+/* --- GENERAL CARD STYLES --- */
+.card,
+.header-card,
+.footer-card {
   background-color: var(--card-background);
   border: 1px solid var(--border-color);
-  border-radius: 10px; /* Rounded corners */
-  padding: 25px;
-  margin-bottom: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* A subtle shadow */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles just for the header card */
-.header-card {
+.footer-card {
   text-align: center;
+  font-size: 0.9em;
+  color: #a9a9a9;
 }
 
-.header-card h1 {
-  font-size: 3rem;
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5em;
   margin-bottom: 10px;
-  color: var(--primary-color);
 }
 
-.header-card p {
-  font-size: 1.25rem;
-  color: #c0c0c0; /* A lighter grey */
+h2 {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Styles for lists and links */
-.card ul {
-  list-style: none;
+p {
+  line-height: 1.6;
 }
 
-.card li {
-  margin-bottom: 12px;
-}
-
-.card a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease-in-out;
-}
-
-.card a:hover {
-  text-decoration: underline;
-  filter: brightness(1.2); /* Make it a bit brighter on hover */
-}
-
-/* Styles for the project sections */
+/* --- PROJECT SECTION SPECIFIC STYLES --- */
 .project-item {
-  padding-top: 20px;
-  margin-top: 20px;
   border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+  margin-top: 15px;
 }
 
-.project-item:first-child {
-  border-top: none; /* Don't put a line above the very first project */
+.project-item:first-of-type {
+  border-top: none;
   padding-top: 0;
   margin-top: 0;
 }
 
-.project-item h3 {
-  margin-bottom: 8px;
+/* --- ANIMATED BUTTON STYLES (NEW!) --- */
+
+/* Prepares the list to hold our buttons */
+.links-list {
+  list-style-type: none; /* Removes the bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Creates a nice space between the buttons */
 }
 
-/* Styles for the footer */
-.footer-card {
+/* The main style for our new buttons */
+.link-as-button {
+  display: block; /* Makes the link fill the container */
+  background-color: var(--card-background);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 15px;
   text-align: center;
-  font-size: 1rem;
-  color: #999;
-
-  /* Add this at the end of your index.css file */
-
-/* Style for the link and project items on hover */
-.card li a, .project-item {
-  /* This makes the change smooth! */
+  text-decoration: none; /* Removes the default link underline */
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+  /* The secret to smooth animations! */
   transition: all 0.3s ease;
 }
 
-.card li a:hover, .project-item:hover {
-  /* Make it slightly bigger */
-  transform: scale(1.03); 
-
-  /* Add a subtle glow (using your primary color!) */
-  box-shadow: 0 0 15px var(--primary-color);
-
-  /* You can also make it a bit brighter */
-  filter: brightness(1.2);
-}
+/* The animation that happens on hover! */
+.link-as-button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  
+  /* Makes the button "lift up" slightly */
+  transform: translateY(-5px); 
+  
+  /* Adds a vibrant glow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
